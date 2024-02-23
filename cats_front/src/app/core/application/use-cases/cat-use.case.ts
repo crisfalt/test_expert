@@ -4,7 +4,5 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CatUseCase {
-
-  private _url = 'https://jsonplaceholder.typicode.com/albums/';
-  constructor(private http: HttpClient) { }
+  constructor() { }
 }

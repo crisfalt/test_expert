@@ -1,4 +1,6 @@
 import { Component } from '@angular/core'
+import { CatUseCase } from 'src/app/core/application/use-cases/cat-use.case';
+import { CatModel } from 'src/app/core/domain/models/cat.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core'
   styleUrls: ['./cats.component.scss']
 })
 export class CatsComponent {
-  title = 'cats_front'
+  products!: CatModel[];
+
+  constructor(private catUseCase: CatUseCase) { }
+
+  ngOnInit() {
+  }
 }

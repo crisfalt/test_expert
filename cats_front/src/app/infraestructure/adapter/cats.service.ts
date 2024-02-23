@@ -10,15 +10,9 @@ import { CatModel } from 'src/app/core/domain/models/cat.model';
 })
 export class CatApiService extends CatPort {
 
-  private _url = 'https://jsonplaceholder.typicode.com/albums/';
+  private _url = '';
   constructor(private http: HttpClient) { super(); }
-  getByID(id: String): Observable<CatModel> {
-    return this.http.get<CatModel>(this._url + id).pipe(delay(2000));
-  }
-  getAll(): Observable<CatModel[]> {
-    return this.http.get<Array<CatModel>>(this._url);
-  }
-  saveNew(_alb: CatModel): Observable<void> {
-    throw new Error('Method not implemented.');
+  get(id: String): Observable<CatModel> {
+    return this.http.get<CatModel>(this._url + id);
   }
 }

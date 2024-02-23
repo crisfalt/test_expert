@@ -10,6 +10,9 @@ import { TagModule } from 'primeng/tag';
 import { DialogModule } from 'primeng/dialog';
 import { ModalCatsComponent } from './views/view-cats/modal-cats/modal-cats.component'
 import { InputTextModule } from 'primeng/inputtext'
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { FormsModule } from '@angular/forms'
+
 @NgModule({
   declarations: [CatsComponent, ModalCatsComponent],
   imports: [
@@ -20,8 +23,10 @@ import { InputTextModule } from 'primeng/inputtext'
     InputTextModule,
     DropdownModule,
     DialogModule,
+    FormsModule,
     TagModule,
-    StyleClassModule
+    StyleClassModule,
+    ProgressSpinnerModule
   ],
   providers: [],
   bootstrap: []

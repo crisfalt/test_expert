@@ -2,15 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CatPort } from '../ports/cat.port';
 import { CatModel } from '../models/cat.model';
+import { lastValueFrom } from 'rxjs';
+import { ResponseModel } from 'src/app/infraestructure/adapter/models/reponse.model';
 @Injectable({
   providedIn: 'root'
 })
 export class CatService {
 
-  private _url = 'https://jsonplaceholder.typicode.com/albums/';
-  constructor(private http: HttpClient, private catPort: CatPort) { }
+  constructor(private catPort: CatPort) { }
 
-  async getCats(): Promise<CatModel[]> {
-    return await this.catPort.getCats();
+  async getSearch(search: string): Promise<ResponseModel<CatModel[]>> {
+    return await lastValueFrom(this.catPort.search({ filter: search }))
+  }
+
+  async getLists(): Promise<CatModel[]> {
+    return await lastValueFrom(this.catPort.getLists())
+  }
+
+  async getForId(id: String): Promise<CatModel> {
+    return await lastValueFrom(this.catPort.getForId(id))
   }
 }

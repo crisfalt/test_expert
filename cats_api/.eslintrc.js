@@ -21,5 +21,9 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'semi': 'off',
+    '@typescript-eslint/semi': ['error', 'never'],
+    'semi-spacing': ['error', {'before': false, 'after': true}],
+    '@typescript-eslint/no-for-in-array': 'error',
   },
 };

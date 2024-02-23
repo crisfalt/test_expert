@@ -1,0 +1,7 @@
+. "$(dirname -- "$0")/husky.sh"
+
+echo 'Ejecutando format'
+npm run format
+
+echo 'Ejecutando linter'
+npm run lint

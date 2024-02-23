@@ -22,7 +22,7 @@
         [rows]="10"
         (onLazyLoad)="loadTable($event)"
         [loading]="loading"
-         [globalFilterFields]="['code', 'name', 'category', 'quantity']"
+         [globalFilterFields]="['code', 'name', 'origin', 'weight.imperial']"
         [rowsPerPageOptions]="[5, 10, 20]">
         <ng-template pTemplate="caption">
         <div class="flex">

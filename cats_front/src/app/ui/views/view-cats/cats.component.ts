@@ -23,6 +23,7 @@ export class CatsComponent {
 
   async ngOnInit() {
     await this.loadListBreeds();
+    await this.loadTable();
   }
 
   async loadListBreeds() {

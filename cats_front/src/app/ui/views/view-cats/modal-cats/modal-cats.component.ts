@@ -10,7 +10,9 @@ import { CatModel } from 'src/app/core/domain/models/cat.model';
 })
 export class ModalCatsComponent {
   cats!: CatModel[];
+  cat!: CatModel;
   @Input() displayDialog: boolean = false;
+  @Input() id: string = '';
   @Output() closed = new EventEmitter();
 
   constructor(private catUseCase: CatUseCase) { }
@@ -18,6 +20,13 @@ export class ModalCatsComponent {
   async ngOnInit() {
     const response = await this.catUseCase.getCats();
     this.cats = response
+    this.loadCatId()
+  }
+
+  loadCatId(){
+
+    console.log(this.id)
+    this.cat = this.cats.find(x => x.id === this.id)!;
   }
 
   hideDialog() {

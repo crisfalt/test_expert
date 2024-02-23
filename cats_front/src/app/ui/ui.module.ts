@@ -9,6 +9,7 @@ import { StyleClassModule } from 'primeng/styleclass'
 import { TagModule } from 'primeng/tag';
 import { DialogModule } from 'primeng/dialog';
 import { ModalCatsComponent } from './views/view-cats/modal-cats/modal-cats.component'
+import { InputTextModule } from 'primeng/inputtext'
 @NgModule({
   declarations: [CatsComponent, ModalCatsComponent],
   imports: [
@@ -16,6 +17,7 @@ import { ModalCatsComponent } from './views/view-cats/modal-cats/modal-cats.comp
     ButtonModule,
     UiRoutingModule,
     TableModule,
+    InputTextModule,
     DropdownModule,
     DialogModule,
     TagModule,
